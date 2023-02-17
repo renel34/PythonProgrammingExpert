@@ -1,12 +1,24 @@
-class ContactInformation:
-    def __init__(self, first_name, last_name, email, phone_number, country):
-        self.first_name = first_name
-        self.last_name = last_name
-        self.email = email
-        self.phone_number = phone_number
-        self.country = country
+class Group:
+    def __init__(self, name, members=[]):
+        self.name = name
+        self.members = members
+    
+    def add(self, name):
+        self.members.append(name)
 
-person1 = ContactInformation("René","Laplante","lapinet51@gmail.com","413-885-3534", "USA")
-person2 = ContactInformation("Lud", "Poirier", "MarLuc38@cablevision.ca","514-843-5689", "Canada")
+    def delete(self, name):
+        if name not in self.members:
+            raise Exception ("Member not in the group")
+        if name in self.members:
+            self.members.remove(name)
 
-print(person2.country)
+    def get_members(self):
+        print(sorted(self.members))
+
+    def merge(self, g2):
+        self.members.append(self.g2)
+            
+g1 = Group("A-Team", ["Tim", "Clement"])
+g2 = Group("B-Team", ["Antoine"])
+g3 = g1.merge(g2)
+print(g3.get_members())

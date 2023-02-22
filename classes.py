@@ -22,3 +22,4 @@ g1 = Group("A-Team", ["Tim", "Clement"])
 g2 = Group("B-Team", ["Antoine"])
 g3 = g1.merge(g2)
 print(g3.get_members())
+

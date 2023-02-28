@@ -15,8 +15,10 @@ class Group:
     def get_members(self):
         print(sorted(self.members))
 
-    def merge(self, g2):
-        self.members.append(g2)
+    def merge(self, group):
+        merged_group = self.members + group.members
+        g3_group = Group("C-Team", merged_group)
+        return g3_group
                     
 g1 = Group("A-Team", ["Tim", "Clement"])
 g2 = Group("B-Team", ["Antoine"])

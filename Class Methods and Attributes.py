@@ -5,3 +5,4 @@ class Temperature:
 def __init__(self, kelvin):
     self.kelvin = kelvin
 
+t1 = Temperature(260)

@@ -1,16 +1,27 @@
-class Employee:
-    average_age = 0
-    average_salary = 0
-    nbr_employee = 0
+class Temperature:
+    min_temperature = 0
+    max_temperature = 1000
 
-    def __init__(self, name, age, salary):
-        self.name = name
-        self.age = age
-        self.salary = salary
-        Employee.nbr_employee += 1
-        Employee.average_age += self.age
-        Employee.average_salary += self.salary
+    def __init__(self, kelvin):
+        self.kelvin = kelvin
+    
+    @classmethod
+    def update_min_temperature(cls, kelvin):
+        if kelvin > cls.min_temperature and kelvin < cls.max_temperature:
+            print(cls.min_temperature)
+            if kelvin > cls.min_temperature:
+                raise ValueError("Invalid temperature.")
+            cls.min_temperature = kelvin
+        
+    @classmethod
+    def update_max_temperature(cls, kelvin):
+        if kelvin > cls.min_temperature and kelvin < cls.max_temperature:
+            print(cls.max_temperature)
+            if kelvin < cls.max_temperature:
+                raise ValueError("Invalid temperature.")
+            cls.max_temperature = kelvin
+            print(cls.max_temperature)
 
-empl1 = Employee("Rene", 60, 58000)
-empl2 = Employee("Luc", 58, 40000)
-print(Employee.average_age)
+t1 = Temperature(260)
+Temperature.update_max_temperature(270)
+Temperature.update_min_temperature(680)

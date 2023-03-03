@@ -17,7 +17,7 @@ class Temperature:
     def update_max_temperature(cls, kelvin):
         if kelvin > cls.min_temperature and kelvin < cls.max_temperature:
             print(cls.max_temperature)
-            if kelvin < cls.max_temperature:
+            if kelvin > cls.max_temperature:
                 raise ValueError("Invalid temperature.")
             cls.max_temperature = kelvin
             print(cls.max_temperature)

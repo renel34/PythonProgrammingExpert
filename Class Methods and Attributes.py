@@ -8,7 +8,7 @@ class Temperature:
         
     @classmethod
     def update_min_temperature(cls, kelvin):
-        print(f"min_temperature ={cls.min_temperature} and max_temperature ={cls.max_temperature}")
+        print(f"min_temperature = {cls.min_temperature} and max_temperature = {cls.max_temperature}")
         print(kelvin)
         if kelvin > cls.min_temperature and kelvin < cls.max_temperature:
             if kelvin < cls.max_temperature:
